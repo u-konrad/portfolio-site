@@ -1,30 +1,61 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { Container, Row, Col, OverlayTrigger, Tooltip  } from "react-bootstrap"
+import Layout from "../components/Layout"
+import socialLinks from '../constants/social_links'
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
+    <section id="home" className="home-banner-01">
+      <Container className="my-container">
+        <Row className="full-screen align-items-center p-100px-tb hero-center">
+          <div className="hero-info">
+            <h6>Dzień dobry! Nazywam się...</h6>
+            <h1 className="my-2">Konrad Urbańczyk</h1>
+            <h2>Web developer</h2>
+            <div className="btn-bar mb-1">
+              <Link className="m-btn m-btn-theme" to="/">
+                Button
+              </Link>
+              <Link className="m-btn m-btn-t-theme" to="/">
+                Button
+              </Link>
+            </div>
+            <ul className= "social-links hero-icons" >
+          {socialLinks.map(link => {
+            return (
+              <OverlayTrigger
+                placement="bottom"
+                delay={{ show: 200, hide: 200 }}
+                overlay={<Tooltip id="button-tooltip">{link.name}</Tooltip>}
+              >
+                <li key={link.id}>
+                  <a href={link.url} className="social-link">
+                    {link.icon}
+                  </a>
+                </li>
+               </OverlayTrigger>
+            )
+          })}
+        </ul>
+          </div>
+          <div className="hero-img">
+            <StaticImage
+              src="../assets/images/my-shape.jpg"
+              alt="Konrad Urbanczyk"
+              className="hero-img"
+              layout="constrained"
+              quality="100"
+              style={{ marginBottom: `1.45rem` }}
+            />
+          </div>
+        </Row>
+      </Container>
+      <div className="icon-scroll-container"> 
+        <Link className="icon-scroll" to="/"></Link>
+       </div>
+    </section>
   </Layout>
 )
 

@@ -17,6 +17,23 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // {
+    //   resolve: `gatsby-plugin-webfonts`,
+    //   options: {
+    //     fonts: {
+    //       google: [
+    //         {
+    //           family: "Montserrat",
+    //           variants: ["300","400","700"],
+    //         },
+    //         {
+    //           family: "Poppins",
+    //           variants: ["300","400", "500", "600", "700"],
+    //         },
+    //       ],
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
