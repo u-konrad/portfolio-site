@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Projects from "../components/Projects"
+import Stack from "../components/Stack"
 import { graphql } from "gatsby"
 
 
@@ -16,6 +17,7 @@ console.log(projects)
     <Layout>
       <Hero />
       <Projects projects={projects} />
+      <Stack/>
     </Layout>
   )
 }

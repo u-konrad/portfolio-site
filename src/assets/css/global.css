@@ -381,12 +381,17 @@ PROJECTS
 .project-info h3:hover {
   color: var(--clr-primary-2);
 }
-.project-desc {
+/* .project-desc {
   word-spacing: 15px;
   color: var(--clr-grey-3);
-}
+} */
+
 .project-stack {
   margin-bottom: 1rem;
+}
+
+.project-stack span:first-of-type {
+  margin-left: 0;
 }
 .project-stack span,
 .about-stack span {
@@ -403,8 +408,6 @@ PROJECTS
 .about-stack span {
   margin-top: 0.5rem;
 }
-
-
 
 @media screen and (min-width: 992px) {
   .project {
@@ -428,7 +431,7 @@ PROJECTS
     grid-column: 5 /12;
     grid-row: 1 / 1;
   }
-  .project:nth-of-type(even) .project-img {
+  .project:nth-of-type(even) .project-img-frame {
     grid-column: 5 / -1;
     grid-row: 1 / 1;
   }
@@ -443,3 +446,37 @@ PROJECTS
     height: 30rem;
   }
 }
+
+/*
+=============== 
+STACK
+===============
+*/
+
+.icon-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 3rem;
+  justify-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .icon-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .icon-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0;
+    justify-items: start;
+  }
+}
+
+/*
+=============== 
+ABOUT
+===============
+*/
