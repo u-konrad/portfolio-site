@@ -536,3 +536,30 @@ CONTACT
 .form-group{
   margin-bottom: 1rem;
 }
+
+.toast{
+  position: fixed;
+  top: 10vh;
+  left: 50%;
+  transform: translate(-50%,0);
+  fill-opacity: 0.5;
+}
+
+  .square {
+    height: 15px;
+    width: 15px;
+  }
+
+  .footer {
+    padding: 12px 0;
+    background: #111;
+}
+
+.footer-links{
+  width: 8rem;
+  font-size: 14px;
+}
+.footer-links a{
+  color: gray;
+
+}

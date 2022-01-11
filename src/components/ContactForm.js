@@ -4,6 +4,7 @@ import * as Yup from "yup"
 import { useForm } from "@formspree/react"
 import InputField from "./InputField"
 import LoadingSpinner from "./LoadingSpinner/LoadingSpinner"
+import MyToast from "./MyToast"
 
 const ContactForm = () => {
   const initFormValues = { name: "", email: "", msg: "" }
@@ -18,11 +19,11 @@ const ContactForm = () => {
 
   const [state, handleSubmit] = useForm("mknygddg")
   const [isLoading, setLoading] = useState(false)
+  const [toastText, setToastText] = useState("")
 
   const submitHandler = async (values, actions) => {
-      setLoading(true)
-      await new Promise(r => setTimeout(r, 2000));
-      console.log("test")
+    setLoading(true)
+
     try {
       const response = await handleSubmit(values)
       if (!response.body.ok) {
@@ -30,16 +31,17 @@ const ContactForm = () => {
       }
       actions.resetForm()
       setLoading(false)
-      alert("Wysłano x wiadomość!")
+      setToastText("Wysłano wiadomość!")
     } catch (err) {
-        setLoading(false)
-      alert("Wysyłanie nie powiodło się!")
+      setLoading(false)
+      setToastText("Wysyłanie nie powiodło się!")
     }
   }
 
   return (
     <Fragment>
       {isLoading && <LoadingSpinner asOverlay />}
+     <MyToast toastText={toastText} onClose={() => setToastText("")}/>
       <Formik
         validationSchema={schema}
         onSubmit={submitHandler}
