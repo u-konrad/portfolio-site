@@ -14,7 +14,7 @@ const Hero = () => {
             <h6>Dzień dobry! Nazywam się...</h6>
             <h1 className="my-2">Konrad Urbańczyk</h1>
             <h3>Web developer</h3>
-            <div className="btn-bar mb-1">
+            <div className="btn-bar mb-2">
               <Link className="m-btn m-btn-theme" to="/">
                 Button
               </Link>

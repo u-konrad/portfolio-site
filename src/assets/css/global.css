@@ -172,7 +172,7 @@ HERO
 }
 
 .hero-icons {
-  width: 6rem;
+  width: 8rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -225,7 +225,7 @@ HERO
 } */
 
 .btn-bar {
-  padding-top: 25px;
+  padding-top: 40px;
 }
 .hero .btn-bar a {
   min-width: 120px;
@@ -480,3 +480,59 @@ STACK
 ABOUT
 ===============
 */
+
+.about-img{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+  0 6px 20px 0 rgba(0, 0, 0, 0.19), 1rem 1rem 0 0 var(--clr-primary);
+}
+
+.about-info{
+padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-info h3{
+  font-size: 36px;
+}
+.about-info h4{
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.about-info p:first-of-type{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-info p:last-of-type{
+  margin-bottom: 2rem;
+}
+
+.about-info button{
+width: 180px;
+}
+
+.about-info span{
+  font-weight: 400;
+}
+
+@media screen and (min-width:768px){
+
+  .about-info{
+    padding-left: 3rem;
+    padding-top: 0;
+
+  }
+}
+
+/*
+=============== 
+CONTACT
+===============
+*/
+
+.form-group{
+  margin-bottom: 1rem;
+}
