@@ -22,6 +22,7 @@ const ContactForm = () => {
   const submitHandler = async (values, actions) => {
       setLoading(true)
       await new Promise(r => setTimeout(r, 2000));
+      console.log("test")
     try {
       const response = await handleSubmit(values)
       if (!response.body.ok) {
