@@ -6,22 +6,21 @@ import Stack from "../components/Stack"
 import { graphql } from "gatsby"
 import About from "../components/About"
 import Contact from "../components/Contact"
-
-
+import Fab from "../components/Fab"
 
 const IndexPage = ({ data }) => {
   const {
     allContentfulProject: { nodes: projects },
   } = data
-console.log(projects)
 
   return (
     <Layout>
       <Hero />
       <Projects projects={projects} />
-      <Stack/>
-      <About/>
-      <Contact/>
+      <Stack />
+      <About />
+      <Contact />
+      <Fab/>
     </Layout>
   )
 }

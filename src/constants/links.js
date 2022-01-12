@@ -2,7 +2,7 @@ const data = [
   {
     id: 0,
     text: "Strona główna",
-    url: "#",
+    url: "#home",
   },
   {
     id: 1,

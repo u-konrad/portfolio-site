@@ -16,7 +16,7 @@ const Hero = () => {
             <h3>Web developer</h3>
             <div className="btn-bar mb-2">
               <Link className="m-btn m-btn-theme" to="#portfolio">
-               Projekty
+               Portfolio
               </Link>
               <Link className="m-btn m-btn-t-theme" to="#kontakt">
                 Kontakt

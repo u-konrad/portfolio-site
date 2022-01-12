@@ -10,7 +10,7 @@ const About = () => {
       <Container className="my-container">
         <h2 className="section-title ">O MNIE</h2>
         <p className="my-2 section-subtitle">Kilka podstawowych informacji</p>
-        <Row className="py-5">
+        <Row className="pt-5 pb-0 pb-lg-5">
           <Col md="5">
             <StaticImage
               src="../images/my-rect.jpg"
