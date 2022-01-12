@@ -7,7 +7,7 @@ const Projects = ({ projects }) => {
       <Container className="my-container">
         <h2 className="section-title ">PORTFOLIO</h2>
         <p className="my-2 section-subtitle">Kilka najnowszych projektów</p>
-        <div className="py-5">
+        <div className="projects-container">
           {projects.map((project, index) => {
             return <Project key={project.id} index={index} {...project} />
           })}

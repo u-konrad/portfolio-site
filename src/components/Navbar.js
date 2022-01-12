@@ -8,7 +8,7 @@ import { Link } from "gatsby"
 const Navbar = ({ toggleSidebar }) => {
   return (
     <nav className="navbar">
-      <div className="nav-center container">
+      <div className="nav-center container" id="nav-links">
         <div className="nav-header">
           <Link to={'/'}>
             <span className="logo">KU</span>
@@ -18,7 +18,7 @@ const Navbar = ({ toggleSidebar }) => {
             <FiMenu />
           </button>
         </div>
-        <div className="nav-links">
+        <ul className="navbar-nav nav-links" >
           {pageLinks.map(link => {
             return (
               <Link key={link.id} to={link.url}>
@@ -26,7 +26,7 @@ const Navbar = ({ toggleSidebar }) => {
               </Link>
             )
           })}
-        </div>
+        </ul>
       </div>
     </nav>
   )

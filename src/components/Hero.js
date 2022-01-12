@@ -15,11 +15,11 @@ const Hero = () => {
             <h1 className="my-2">Konrad Urbańczyk</h1>
             <h3>Web developer</h3>
             <div className="btn-bar mb-2">
-              <Link className="m-btn m-btn-theme" to="/">
-                Button
+              <Link className="m-btn m-btn-theme" to="#portfolio">
+               Projekty
               </Link>
-              <Link className="m-btn m-btn-t-theme" to="/">
-                Button
+              <Link className="m-btn m-btn-t-theme" to="#kontakt">
+                Kontakt
               </Link>
             </div>
             <ul className="social-links hero-icons">
@@ -43,7 +43,7 @@ const Hero = () => {
           </div>
           <div className="hero-img">
             <StaticImage
-              src="../images/my-shape.jpg"
+              src="../images/my-shape2.jpg"
               alt="Konrad Urbanczyk"
               className="hero-img"
               layout="constrained"

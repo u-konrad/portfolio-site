@@ -1,24 +1,29 @@
 const data = [
   {
     id: 0,
-    text: "home",
-    url: "/",
+    text: "Strona główna",
+    url: "#",
   },
   {
     id: 1,
-    text: "projects",
-    url: "/projects/",
+    text: "Portfolio",
+    url: "#portfolio",
   },
   {
     id: 2,
-    text: "about",
-    url: "/about/",
+    text: "Umiejętności",
+    url: "#technologie",
   },
 
   {
     id: 3,
-    text: "contact",
-    url: "/contact/",
+    text: "O mnie",
+    url: "#informacje",
+  },
+  {
+    id: 4,
+    text: "Kontakt",
+    url: "#kontakt",
   },
 ]
 
