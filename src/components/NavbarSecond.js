@@ -1,11 +1,10 @@
 import React from "react"
-// import logo from "../assets/images/logo.svg"
 import { HiMenu } from "react-icons/hi"
 import pageLinks from "../constants/links"
 import "./Navbar.css"
 
 import { Link } from "gatsby"
-const Navbar = ({ toggleSidebar }) => {
+const NavbarSecond = ({ toggleSidebar }) => {
 
 
 
@@ -22,9 +21,9 @@ const Navbar = ({ toggleSidebar }) => {
           {pageLinks.map(link => {
             return (
               <li key={link.id}>
-                <a className="nav-link" href={link.url}>
+                <Link className="nav-link" to={`/${link.url}`}>
                   {link.text}
-                </a>
+                </Link>
               </li>
             )
           })}
@@ -36,4 +35,4 @@ const Navbar = ({ toggleSidebar }) => {
   )
 }
 
-export default Navbar
+export default NavbarSecond

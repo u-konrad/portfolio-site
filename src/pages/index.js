@@ -7,6 +7,7 @@ import { graphql } from "gatsby"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import Fab from "../components/Fab"
+import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const {
@@ -15,12 +16,13 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title="Portfolio" />
       <Hero />
       <Projects projects={projects} />
       <Stack />
       <About />
       <Contact />
-      <Fab/>
+      <Fab />
     </Layout>
   )
 }

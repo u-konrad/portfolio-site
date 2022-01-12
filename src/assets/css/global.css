@@ -213,7 +213,7 @@ HERO
   .hero-img {
     display: block;
     grid-row: 1/1;
-    grid-column: 7/12;
+    grid-column: 7/-1;
   }
   .hero-center {
     grid-template-columns: repeat(12, 1fr);
@@ -309,7 +309,7 @@ HERO
 .m-btn.m-btn-t-theme:hover {
   background: var(--clr-primary);
   border-color: var(--clr-primary);
-  color: #ffffff;
+  color: black;
 }
 
 .icon-scroll-container {

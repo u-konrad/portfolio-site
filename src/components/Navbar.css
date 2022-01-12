@@ -77,9 +77,9 @@ box-shadow: var(--shadow);
 
   .nav-link, .nav-link:focus {
     margin-right: 2rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: black;
-    letter-spacing: var(--spacing);
+    letter-spacing: 0.15rem;
     transition: var(--transition);
     padding: 0.5rem 0;
     font-size: 14px;
