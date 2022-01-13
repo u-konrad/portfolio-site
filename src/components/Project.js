@@ -1,10 +1,8 @@
 import React from "react"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaGithub, FaLink } from "react-icons/fa"
-import { Link } from "gatsby"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
 
-const img = "../assets/images/test.jpg"
 const Project = ({ description, title, github, stack, url, image }) => {
   return (
     <article className="project">
@@ -38,7 +36,7 @@ const Project = ({ description, title, github, stack, url, image }) => {
             delay={{ show: 200, hide: 200 }}
             overlay={<Tooltip id="button-tooltip">Live site</Tooltip>}
           >
-            <a href={url} target="_blank">
+            <a href='https://www.gatsbyjs.com/docs/using-client-side-only-packages/' target="_blank" rel="noopener noreferrer" >
               <FaLink className="social-link me-2"></FaLink>
             </a>
           </OverlayTrigger>
@@ -47,7 +45,7 @@ const Project = ({ description, title, github, stack, url, image }) => {
             delay={{ show: 200, hide: 200 }}
             overlay={<Tooltip id="button-tooltip">Github</Tooltip>}
           >
-            <a href={github} target="_blank">
+            <a href={github} target="_blank" rel="noopener noreferrer">
               <FaGithub className="social-link me-2"></FaGithub>
             </a>
           </OverlayTrigger>

@@ -11,7 +11,6 @@ import MongoIcon from "../assets/svg/icons8-mongodb.svg"
 import BootstrapIcon from "../assets/svg/icons8-bootstrap.svg"
 import FigmaIcon from "../assets/svg/icons8-figma.svg"
 import PsIcon from "../assets/svg/icons8-adobe-photoshop.svg"
-import GqlIcon from "../assets/svg/icons8-graphql.svg"
 import ReduxIcon from "../assets/svg/icons8-redux.svg"
 import Icon from "./Icon"
 

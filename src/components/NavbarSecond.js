@@ -9,7 +9,7 @@ const NavbarSecond = ({ toggleSidebar }) => {
 
 
   return (
-    <nav className="navbar" id="navbar">
+    <nav className="navbar" >
       <div className="nav-center container" >
           <Link className="logo-link" to={"/"}>
             <span className="logo">KU</span>

@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react"
-import { Formik, Form, Field } from "formik"
+import { Formik, Form} from "formik"
 import * as Yup from "yup"
 import { useForm } from "@formspree/react"
 import InputField from "./InputField"
@@ -17,7 +17,7 @@ const ContactForm = () => {
     msg: Yup.string().required("Proszę, wprowadź wiadomość."),
   })
 
-  const [state, handleSubmit] = useForm("mknygddg")
+  const [, handleSubmit] = useForm("mknygddg")
   const [isLoading, setLoading] = useState(false)
   const [toastText, setToastText] = useState("")
 

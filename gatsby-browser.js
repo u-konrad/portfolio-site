@@ -8,12 +8,13 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./src/assets/css/global.css"
 import bootstrap from "bootstrap/dist/js/bootstrap"
 
+export const onRouteUpdate = () => {
+  if (!document.getElementById("navbar")) return
 
   document.addEventListener("scroll", function (e) {
-    if (!document.getElementById("navbar")) return
     const navbar = document.getElementById("navbar")
     const fab = document.getElementById("fab")
-    if (window.scrollY == 0) {
+    if (window.scrollY === 0) {
       navbar.classList.remove("scrolled")
     } else {
       if (!navbar.classList.contains("scrolled")) {
@@ -30,10 +31,7 @@ import bootstrap from "bootstrap/dist/js/bootstrap"
     }
   })
 
-
-export const onInitialClientRender = () => {
-  if (!document.getElementById("navbar")) return
-  var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+  new bootstrap.ScrollSpy(document.body, {
     target: "#nav-links",
   })
 }

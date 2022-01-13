@@ -4,7 +4,6 @@ import socialLinks from "../constants/social_links"
 import { Link } from "gatsby"
 import { FaTimes } from "react-icons/fa"
 import "./Sidebar.css"
-import { OverlayTrigger, Tooltip } from "react-bootstrap"
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
@@ -27,17 +26,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <ul className={isOpen ? "social-links sidebar-icons" : null}>
           {socialLinks.map(link => {
             return (
-              // <OverlayTrigger
-              //   placement="bottom"
-              //   delay={{ show: 200, hide: 200 }}
-              //   overlay={<Tooltip id="button-tooltip">{link.name}</Tooltip>}
-              // >
+             
                 <li key={link.id}>
                   <a href={link.url} className="social-link">
                     {link.icon}
                   </a>
                 </li>
-              // </OverlayTrigger>
             )
           })}
         </ul>

@@ -37,10 +37,10 @@ const About = () => {
               <MdLocationOn />
               <strong> Lokalizacja:</strong> Warszawa, Polska
             </p>
-            <button className=" m-btn m-btn-theme">
+            <a className=" m-btn m-btn-theme" style={{width:'180px'}} href='/test.jpg' download>
               <span className="me-1">Pobierz CV </span>
               <FiDownload style={{ fontSize: "20px" }} />
-            </button>
+            </a>
           </Col>
         </Row>
       </Container>
