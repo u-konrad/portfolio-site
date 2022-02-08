@@ -1,16 +1,18 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaGithub, FaLink } from "react-icons/fa"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
+import { StaticImage } from "gatsby-plugin-image"
 
-const Project = ({ description, title, github, stack, url, image }) => {
+
+const Project = ({ description, title, github, stack, url, img }) => {
   return (
     <article className="project">
       <div className="project-img-frame">
-        <GatsbyImage
-          image={getImage(image)}
-          className="project-img"
+        <StaticImage
+          src={img}
           alt={title}
+          className="project-img"
+          layout="fullWidth"
         />
       </div>
       <div className="project-info">
@@ -24,9 +26,9 @@ const Project = ({ description, title, github, stack, url, image }) => {
           </a>
         </OverlayTrigger>
 
-        <p className="project-desc">{description.description}</p>
+        <p className="project-desc">{description}</p>
         <div className="project-stack">
-          {stack.list.map(item => {
+          {stack.map(item => {
             return <span key={item}>{item}</span>
           })}
         </div>
@@ -36,7 +38,11 @@ const Project = ({ description, title, github, stack, url, image }) => {
             delay={{ show: 200, hide: 200 }}
             overlay={<Tooltip id="button-tooltip">Live site</Tooltip>}
           >
-            <a href='https://www.gatsbyjs.com/docs/using-client-side-only-packages/' target="_blank" rel="noopener noreferrer" >
+            <a
+              href="https://www.gatsbyjs.com/docs/using-client-side-only-packages/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLink className="social-link me-2"></FaLink>
             </a>
           </OverlayTrigger>

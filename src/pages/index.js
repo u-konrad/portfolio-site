@@ -3,22 +3,24 @@ import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Projects from "../components/Projects"
 import Stack from "../components/Stack"
-import { graphql } from "gatsby"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import Fab from "../components/Fab"
 import Seo from "../components/seo"
+import data from '../constants/projects.json'
 
-const IndexPage = ({ data }) => {
-  const {
-    allContentfulProject: { nodes: projects },
-  } = data
+const IndexPage = () => {
+  // const {
+  //   allContentfulProject: { nodes: projects },
+  // } = data
+
+console.log(data)
 
   return (
     <Layout>
       <Seo title="Portfolio" />
       <Hero />
-      <Projects projects={projects} />
+      <Projects projects={data.projects} />
       <Stack />
       <About />
       <Contact />
@@ -27,26 +29,26 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  {
-    allContentfulProject {
-      nodes {
-        title
-        url
-        github
-        id
-        stack {
-          list
-        }
-        description {
-          description
-        }
-        image {
-          gatsbyImageData(layout: FULL_WIDTH)
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   {
+//     allContentfulProject {
+//       nodes {
+//         title
+//         url
+//         github
+//         id
+//         stack {
+//           list
+//         }
+//         description {
+//           description
+//         }
+//         image {
+//           gatsbyImageData(layout: FULL_WIDTH)
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default IndexPage

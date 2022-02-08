@@ -1,0 +1,13 @@
+{
+    "projects":[
+        {
+            "title":"project1",
+            "url":"some url",
+            "github":"github",
+            "id":"1",
+            "stack":["one","two"],
+            "description":"desc",
+            "img":"../images/my-shape2.jpg"
+        }
+    ]
+}
