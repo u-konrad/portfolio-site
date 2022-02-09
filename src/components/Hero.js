@@ -1,20 +1,19 @@
 import React from "react"
-import { Container, Row, OverlayTrigger, Tooltip } from "react-bootstrap"
+import { Container, OverlayTrigger, Tooltip } from "react-bootstrap"
 import socialLinks from "../constants/social_links"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import HeroPic from "../assets/svg/undraw_programming_re_kg9v.svg"
 import styled from "styled-components"
 
 const Hero = () => {
   return (
-    <Wrapper id="home" className="hero">
-      <Container className="full-screen d-flex align-items-center p-100px-tb hero-center">
-        <div className="hero-info col-7 ">
+    <Wrapper id="home" className="page-padding p-100px-tb">
+      <Container className="p-0 d-flex flex-wrap align-items-center justify-content-center ">
+        <div className="hero-info col-12 col-lg-7 ">
           <h6>Dzień dobry! Nazywam się...</h6>
           <h2 className="my-2">Konrad Urbańczyk</h2>
           <h1>Web developer</h1>
-          <p className="mt-4 mb-2 col-6">Some text here about me how i am a great guy awesome.Some text here about me how i am a great guy awesome.</p>
+          <p className="mt-4 mb-2 ">Some text here about me how i am a great guy awesome.Some text here about me how i am a great guy awesome.</p>
           <div className="btn-bar mb-2">
             <Link className="m-btn m-btn-theme" to="#portfolio">
               Portfolio
@@ -42,7 +41,7 @@ const Hero = () => {
             })}
           </ul>
         </div>
-          <HeroPic className='col-6' />
+          <HeroPic className='col-12 col-lg-5' />
       </Container>
       <div className="icon-scroll-container">
         <Link className="icon-scroll" to="#portfolio"></Link>
@@ -52,8 +51,7 @@ const Hero = () => {
 }
 
 const Wrapper = styled.section`
-
-
+position: relative;
 h6{
   font-weight:400;
   color:var(--clr-primary);
@@ -70,7 +68,69 @@ h1{
   font-weight:bold;
   font-size:90px;
   line-height:1;
+}
 
+p{
+  max-width:400px
+}
+
+@media screen and (max-width: 1400px) {
+
+  h2{
+    font-size:5vw
+  }
+  h1{
+    font-size:6vw
+  }
+}
+
+
+.icon-scroll-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+}
+
+.icon-scroll {
+  width: 20px;
+  height: 35px;
+  box-shadow: inset 0 0 0 1.5px rgb(107, 107, 107);
+  border-radius: 25px;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+@media screen and (max-width: 768px) {
+  .icon-scroll-container {
+    display: none;
+  }
+}
+
+.icon-scroll:before {
+  display: block;
+  content: "";
+  width: 4px;
+  height: 8px;
+  background: black;
+  margin-left: 8px;
+  margin-top: 3px;
+  border-radius: 4px;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(23px);
+  }
 }
 
 
