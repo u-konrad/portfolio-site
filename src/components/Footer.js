@@ -1,9 +1,12 @@
 import React from "react"
 import socialLinks from "../constants/social_links"
+import pageLinks from '../constants/links'
+
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container d-flex justify-content-between align-items-center">
+    <footer>
+      <div className="padding-page d-flex justify-content-between align-items-center">
+    
         <div className="footer-links social-links">
           {socialLinks.map(link => {
             return (

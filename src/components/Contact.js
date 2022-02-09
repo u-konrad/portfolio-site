@@ -6,7 +6,7 @@ import ContactPicture from "../assets/svg/undraw_letter_re_8m03.svg"
 
 const Contact = () => {
   return (
-    <section id="kontakt" className="p-100px-tb">
+    <section id="kontakt" className="p-100px-tb page-padding">
       <Container className="my-container">
         <h2 className="section-title ">KONTAKT</h2>
         <p className="my-2 section-subtitle">Zróbmy coś razem</p>

@@ -4,25 +4,29 @@ import socialLinks from "../constants/social_links"
 import { Link } from "gatsby"
 import HeroPic from "../assets/svg/undraw_programming_re_kg9v.svg"
 import styled from "styled-components"
+import ScrollIcon from "./ScrollIcon"
 
 const Hero = () => {
   return (
-    <Wrapper id="home" className="page-padding p-100px-tb">
+    <Wrapper id="home" >
       <Container className="p-0 d-flex flex-wrap align-items-center justify-content-center ">
         <div className="hero-info col-12 col-lg-7 ">
           <h6>Dzień dobry! Nazywam się...</h6>
           <h2 className="my-2">Konrad Urbańczyk</h2>
           <h1>Web developer</h1>
-          <p className="mt-4 mb-2 ">Some text here about me how i am a great guy awesome.Some text here about me how i am a great guy awesome.</p>
+          <p className="mt-4 mb-3 ">
+            Some text here about me how i am a great guy awesome.Some text here
+            about me how i am a great guy awesome.
+          </p>
           <div className="btn-bar mb-2">
-            <Link className="m-btn m-btn-theme" to="#portfolio">
+            <Link className="m-btn m-btn-theme me-2" to="#portfolio">
               Portfolio
             </Link>
             <Link className="m-btn m-btn-t-theme" to="#kontakt">
               Kontakt
             </Link>
           </div>
-          <ul className="social-links hero-icons">
+          <ul className="social-row">
             {socialLinks.map(link => {
               return (
                 <OverlayTrigger
@@ -32,7 +36,7 @@ const Hero = () => {
                   overlay={<Tooltip id="button-tooltip">{link.name}</Tooltip>}
                 >
                   <li>
-                    <a href={link.url} className="social-link">
+                    <a href={link.url} className="social-link me-2">
                       {link.icon}
                     </a>
                   </li>
@@ -41,97 +45,78 @@ const Hero = () => {
             })}
           </ul>
         </div>
-          <HeroPic className='col-12 col-lg-5' />
+        <HeroPic className="hero-pic col-12 col-lg-5" />
       </Container>
-      <div className="icon-scroll-container">
-        <Link className="icon-scroll" to="#portfolio"></Link>
-      </div>
+     <ScrollIcon/>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.section`
-position: relative;
-h6{
-  font-weight:400;
-  color:var(--clr-primary);
-  font-size:18px;
-}
-
-h2{
-  font-weight:300;
-  font-size:72px;
-  line-height:1;
-}
-
-h1{
-  font-weight:bold;
-  font-size:90px;
-  line-height:1;
-}
-
-p{
-  max-width:400px
-}
-
-@media screen and (max-width: 1400px) {
-
-  h2{
-    font-size:5vw
-  }
-  h1{
-    font-size:6vw
-  }
-}
-
-
-.icon-scroll-container {
-  width: 100%;
+  position: relative;
+  min-height:100vh;
   display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-}
+  justify-content:center;
+  align-items:center;
 
-.icon-scroll {
-  width: 20px;
-  height: 35px;
-  box-shadow: inset 0 0 0 1.5px rgb(107, 107, 107);
-  border-radius: 25px;
-  /* margin-left: auto;
-  margin-right: auto; */
-}
+ @media screen and (max-width: 992px) {
+      min-height:0;
+margin-top:50px
+     }
 
-@media screen and (max-width: 768px) {
-  .icon-scroll-container {
+  h6 {
+    font-weight: 400;
+    color: var(--clr-primary);
+    font-size: 18px;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 1;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 90px;
+    line-height: 1;
+  }
+
+  p {
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    h2 {
+      font-size: max(5vw, 34px);
+    }
+    h1 {
+      font-size: max(6vw, 40px);
+    }
+  }
+
+
+
+  @media screen and (max-width: 992px) {
+    .hero-pic {
+      padding-top:20px ;
+      max-height: 35vh;
+      /* aspect-ratio:4/3; */
+      object-fit: cover;
+    }
+  }
+
+
+
+  .social-row{
     display: none;
   }
-}
 
-.icon-scroll:before {
-  display: block;
-  content: "";
-  width: 4px;
-  height: 8px;
-  background: black;
-  margin-left: 8px;
-  margin-top: 3px;
-  border-radius: 4px;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-name: scroll;
-}
-
-@keyframes scroll {
-  0% {
-    opacity: 1;
+  @media screen and (max-width: 992px) {
+    .social-row{
+    display: flex;
   }
-  100% {
-    opacity: 0;
-    transform: translateY(23px);
   }
-}
 
 
 `

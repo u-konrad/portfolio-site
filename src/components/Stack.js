@@ -16,7 +16,7 @@ import Icon from "./Icon"
 
 const Stack = () => {
   return (
-    <section id="technologie" className="p-100px-tb ">
+    <section id="technologie" className="p-100px-tb page-padding">
       <Container className="my-container">
         <h2 className="section-title ">UMIEJĘTNOŚCI</h2>
         <p className="my-2 section-subtitle">Technologie z których korzystam</p>

@@ -1,13 +1,19 @@
 {
-    "projects":[
+    "projects": [
         {
-            "title":"project1",
-            "url":"some url",
-            "github":"github",
-            "id":"1",
-            "stack":["one","two"],
-            "description":"desc",
-            "img":"../images/my-shape2.jpg"
+            "title": "JourneyBook",
+            "url": "https://journey-book.web.app/",
+            "github": "https://github.com/u-konrad/journey-book",
+            "id": "1",
+            "stack": [
+                "ReactJS",
+                "NodeJS",
+                "Express",
+                "MongoDB",
+                "Bootstrap"
+            ],
+            "description": "Prosta aplikacja typu social media, zbudowana przy pomocy stosu MERN. Pozwala użytkownikowi na utworzenie własnego bloga o podróżach, oraz na przeglądanie blogów innych użytkowników.",
+            "img": "../images/jb-1.jpg"
         }
     ]
 }

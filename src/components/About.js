@@ -6,7 +6,7 @@ import { MdLocationOn } from "react-icons/md"
 
 const About = () => {
   return (
-    <section id="informacje" className="p-100px-tb bg-alternate">
+    <section id="informacje" className="p-100px-tb bg-alternate page-padding">
       <Container className="my-container">
         <h2 className="section-title ">O MNIE</h2>
         <p className="my-2 section-subtitle">Kilka podstawowych informacji</p>

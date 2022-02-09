@@ -22,14 +22,11 @@ Sidebar
   transform: translateX(0);
 }
 
-.sidebar-links {
-  margin-bottom: 2rem;
-}
 
 .sidebar-icons {
   margin: 0 auto;
-  width: 8rem;
-
+  display: flex;
+  justify-content: center;
 }
 
 .sidebar-links li {

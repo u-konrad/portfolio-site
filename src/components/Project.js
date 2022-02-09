@@ -3,28 +3,21 @@ import { FaGithub, FaLink } from "react-icons/fa"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
 import { StaticImage } from "gatsby-plugin-image"
 
-
 const Project = ({ description, title, github, stack, url, img }) => {
   return (
     <article className="project">
       <div className="project-img-frame">
         <StaticImage
-          src={img}
+          src="../images/jb-1.jpg"
           alt={title}
           className="project-img"
           layout="fullWidth"
         />
       </div>
       <div className="project-info">
-        <OverlayTrigger
-          placement="bottom-start"
-          delay={{ show: 200, hide: 200 }}
-          overlay={<Tooltip id="button-tooltip">Live site</Tooltip>}
-        >
-          <a href={url}>
-            <h3>{title}</h3>
-          </a>
-        </OverlayTrigger>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          <h3>{title}</h3>
+        </a>
 
         <p className="project-desc">{description}</p>
         <div className="project-stack">
@@ -36,13 +29,9 @@ const Project = ({ description, title, github, stack, url, img }) => {
           <OverlayTrigger
             placement="bottom"
             delay={{ show: 200, hide: 200 }}
-            overlay={<Tooltip id="button-tooltip">Live site</Tooltip>}
+            overlay={<Tooltip id="button-tooltip">Link do strony</Tooltip>}
           >
-            <a
-              href="https://www.gatsbyjs.com/docs/using-client-side-only-packages/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={url} target="_blank" rel="noopener noreferrer">
               <FaLink className="social-link me-2"></FaLink>
             </a>
           </OverlayTrigger>

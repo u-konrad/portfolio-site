@@ -11,7 +11,7 @@ const Navbar = ({ toggleSidebar }) => {
 
   return (
     <nav className="navbar" id="navbar">
-      <div className="page-padding w-100 d-flex justify-content-between align-items-center " >
+      <div className="padding-page w-100 d-flex justify-content-between align-items-center " >
           <Link className="logo-link" to={"/"}>
             <span className="logo">KU</span>
             <span className="logo logo-period">.</span>

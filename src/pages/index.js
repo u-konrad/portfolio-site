@@ -5,7 +5,6 @@ import Projects from "../components/Projects"
 import Stack from "../components/Stack"
 import About from "../components/About"
 import Contact from "../components/Contact"
-import Fab from "../components/Fab"
 import Seo from "../components/seo"
 import data from '../constants/projects.json'
 
@@ -24,7 +23,7 @@ console.log(data)
       <Stack />
       <About />
       <Contact />
-      <Fab />
+
     </Layout>
   )
 }
