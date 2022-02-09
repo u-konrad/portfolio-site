@@ -6,22 +6,22 @@ FONTS
 */
 
 @font-face {
-  font-family: "poppins";
-  src: url("../fonts/Poppins-Bold.ttf");
+  font-family: "montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "poppins";
-  src: url("../fonts/Poppins-Regular.ttf");
+  font-family: "montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "poppins";
-  src: url("../fonts/Poppins-Light.ttf");
+  font-family: "montserrat";
+  src: url("../fonts/Montserrat-Light.ttf");
   font-weight: 300;
   font-style: normal;
 }
@@ -42,8 +42,15 @@ GLOBALS
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
 body {
   position: relative;
+  min-height: 100vh;
 }
 
 h1,
@@ -51,15 +58,15 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: "poppins", sans-serif !important;
-  font-weight: 700;
+h6,
+p {
+  font-family: "montserrat", sans-serif !important;
+  margin: 0;
 }
 
-p,
 span,
 a {
-  font-family: "poppins", sans-serif;
+  font-family: "montserrat", sans-serif;
 }
 
 a {
@@ -87,11 +94,9 @@ ul {
   min-height: 100vh;
 }
 
-.container {
-  max-width: 1140px;
-}
 
-@media (min-width: 576px) {
+
+/* @media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
@@ -113,6 +118,13 @@ ul {
   }
 }
 
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1420px;
+  }
+} */
+
+
 /* social links */
 .social-links {
   display: flex;
@@ -133,6 +145,7 @@ ul {
   display: inline-block;
   position: relative;
   font-size: 40px;
+  font-weight: bold;
   z-index: 1;
 }
 
@@ -198,7 +211,7 @@ HERO
 ===============
 */
 
-.hero-center {
+/* .hero-center {
   display: grid;
   align-items: center;
 }
@@ -251,19 +264,15 @@ HERO
 .hero h3 {
   font-size: 40px;
   font-weight: 300;
-}
-/* 
-.hero-img{
-    width: 110%;
 } */
 
-.btn-bar {
+/* .btn-bar {
   padding-top: 40px;
-}
-.hero .btn-bar a {
+} */
+/* .hero .btn-bar a {
   min-width: 120px;
   margin-right: 12px;
-}
+} */
 
 .m-btn {
   font-family: "poppins", sans-serif;
