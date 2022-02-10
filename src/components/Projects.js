@@ -9,7 +9,7 @@ const Projects = ({ projects }) => {
         <p className="my-2 section-subtitle">Najnowsze projekty</p>
         <div className="projects-container">
           {projects.map((project, index) => {
-            return <Project key={project.id} index={index} {...project} />
+            return <Project key={index} index={index} {...project} />
           })}
         </div>
       </Container>

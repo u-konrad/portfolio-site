@@ -9,8 +9,8 @@ const Project = ({ description, title, github, stack, url, images }) => {
   const descriptionText = description => {
     return (
       <Fragment>
-        {JSON.parse(description.raw).content.map(p => (
-          <p >{p.content[0].value}</p>
+        {JSON.parse(description.raw).content.map((p,index) => (
+          <p key={index}>{p.content[0].value}</p>
         ))}
       </Fragment>
     )
