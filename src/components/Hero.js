@@ -15,8 +15,7 @@ const Hero = () => {
           <h2 className="my-2">Konrad Urbańczyk</h2>
           <h1>Web developer</h1>
           <p className="mt-4 mb-3 ">
-            Some text here about me how i am a great guy awesome.Some text here
-            about me how i am a great guy awesome.
+          Buduję atrakcyjne i funkcjonalne aplikacje internetowe przy użyciu najnowszych dostępnych technologii.
           </p>
           <div className="btn-bar mb-2">
             <Link className="m-btn m-btn-theme me-2" to="#portfolio">

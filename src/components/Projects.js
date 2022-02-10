@@ -6,7 +6,7 @@ const Projects = ({ projects }) => {
     <section id="portfolio" className=" bg-alternate ">
       <Container className="my-container">
         <h2 className="section-title ">PORTFOLIO</h2>
-        <p className="my-2 section-subtitle">Kilka najnowszych projektów</p>
+        <p className="my-2 section-subtitle">Najnowsze projekty</p>
         <div className="projects-container">
           {projects.map((project, index) => {
             return <Project key={project.id} index={index} {...project} />

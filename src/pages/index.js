@@ -40,7 +40,7 @@ export const query = graphql`
         title
         url
         images {
-          gatsbyImageData(width: 700, quality: 100, layout: CONSTRAINED)
+          gatsbyImageData(width: 800, quality: 100, layout: CONSTRAINED)
         }
         stack {
           items

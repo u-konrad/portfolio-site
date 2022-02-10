@@ -9,7 +9,7 @@ const Contact = () => {
     <section id="kontakt" className="p-100px-tb page-padding">
       <Container className="my-container">
         <h2 className="section-title ">KONTAKT</h2>
-        <p className="my-2 section-subtitle">Zróbmy coś razem</p>
+        <p className="my-2 section-subtitle">Nawiążmy współpracę</p>
         <div className="pt-5 pb-0 pb-lg-5 position-relative">
           <Card className="col-lg-8  p-4 bg-white shadow rounded  ">
             <ContactForm />

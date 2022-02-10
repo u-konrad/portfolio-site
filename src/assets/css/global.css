@@ -226,7 +226,6 @@ section {
   border-color: #090a0c;
   color: white;
   font-weight: 700;
-
 }
 
 .m-btn.m-btn-t-theme {
@@ -240,7 +239,6 @@ section {
   border-color: var(--clr-primary-2);
   color: white;
   font-weight: 700;
-
 }
 
 /* .social-buttons.hidden {
@@ -262,7 +260,7 @@ PROJECTS
 
 .project {
   display: grid;
-  margin-bottom: 10rem;
+  margin-bottom: 12rem;
   text-align: end;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
@@ -304,7 +302,7 @@ PROJECTS
 }
 
 .project:hover .project-img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .project:hover .project-img::after {
@@ -329,20 +327,19 @@ PROJECTS
   box-shadow: var(--shadow);
 }
 
-.project-desc p{
+.project-desc p {
   margin-bottom: 0.5rem;
 }
 
-.project-desc p:last-of-type{
+.project-desc p:last-of-type {
   margin-bottom: 0;
 }
-
 
 @media screen and (max-width: 992px) {
   .project {
     display: flex;
     flex-wrap: wrap;
-margin-bottom: 5rem;
+    margin-bottom: 5rem;
   }
 
   .project-img-frame {
@@ -476,7 +473,6 @@ ABOUT
 .about-info button {
   width: 180px;
 }
-
 
 @media screen and (min-width: 768px) {
   .about-info {

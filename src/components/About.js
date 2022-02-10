@@ -27,17 +27,13 @@ const About = () => {
             <h3>Konrad Urbańczyk</h3>
             <h4>Web developer</h4>
             <p>
-              I design and develop services for customers of all sizes,
-              specializing in creating stylish, modern websites, web services
-              and online stores. My passion is to design digital user
-              experiences through the bold interface and meaningful
-              interactions. Check out my Portfolio
+            Projektuję i buduję nowoczesne aplikacje internetowe, skupiając się na łączeniu funkcjonalności i stylowego designu. Moją pasją jest opanowywanie nowych technologii i znajdywanie innowacyjnych i efektywnych rozwiązań dla pojawiających się problemów. 
             </p>
             <p>
               <MdLocationOn />
               <strong> Lokalizacja:</strong> Warszawa, Polska
             </p>
-            <a className=" m-btn m-btn-theme" style={{width:'180px'}} href='/test.jpg' download>
+            <a className=" m-btn m-btn-theme" style={{width:'180px'}} href='/konrad_urbanczyk_cv.pdf' download>
               <span className="me-1">Pobierz CV </span>
               <FiDownload style={{ fontSize: "20px" }} />
             </a>
