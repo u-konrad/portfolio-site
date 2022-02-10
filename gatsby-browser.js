@@ -8,7 +8,7 @@ export const onRouteUpdate = () => {
   document.addEventListener("scroll", function (e) {
     const navbar = document.getElementById("navbar")
     const fab = document.getElementById("fab")
-    const sb = document.getElementById("social-buttons")
+    // const sb = document.getElementById("social-buttons")
 
     if (window.scrollY === 0) {
       navbar.classList.remove("scrolled")
@@ -25,15 +25,15 @@ export const onRouteUpdate = () => {
       fab.classList.remove("visible")
     }
 
-    if (window.scrollY > 2955) {
-      if (!sb.classList.contains("hidden")) {
-        sb.classList.add("hidden")
-      }
-    } else {
-      if (sb.classList.contains("hidden")) {
-        sb.classList.remove("hidden")
-      }
-    }
+    // if (window.scrollY > 2955) {
+    //   if (!sb.classList.contains("hidden")) {
+    //     sb.classList.add("hidden")
+    //   }
+    // } else {
+    //   if (sb.classList.contains("hidden")) {
+    //     sb.classList.remove("hidden")
+    //   }
+    // }
   })
 
   new bootstrap.ScrollSpy(document.body, {

@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 import Fab from "../components/Fab"
-import SocialButtons from "../components/SocialButtons"
+// import SocialButtons from "../components/SocialButtons"
 
 
 const Layout = ({ children }) => {
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       {children}
       <Footer />
       <Fab />
-      <SocialButtons/>
+      {/* <SocialButtons/> */}
     </Fragment>
   )
 }

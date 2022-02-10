@@ -6,48 +6,49 @@ import Stack from "../components/Stack"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import Seo from "../components/seo"
-import data from '../constants/projects.json'
+import { graphql } from "gatsby"
 
-const IndexPage = () => {
-  // const {
-  //   allContentfulProject: { nodes: projects },
-  // } = data
+const IndexPage = ({data}) => {
+  const {
+    allContentfulProject: { nodes: projects },
+  } = data
 
-console.log(data)
 
   return (
     <Layout>
       <Seo title="Portfolio" />
       <Hero />
-      <Projects projects={data.projects} />
+      <Projects projects={projects} />
       <Stack />
       <About />
       <Contact />
-
     </Layout>
   )
 }
 
-// export const query = graphql`
-//   {
-//     allContentfulProject {
-//       nodes {
-//         title
-//         url
-//         github
-//         id
-//         stack {
-//           list
-//         }
-//         description {
-//           description
-//         }
-//         image {
-//           gatsbyImageData(layout: FULL_WIDTH)
-//         }
-//       }
-//     }
-//   }
-// `
+
+
+export const query = graphql`
+  {
+    allContentfulProject {
+      nodes {
+        description {
+          raw
+        }
+        github
+        id
+        title
+        url
+        images {
+          gatsbyImageData(width: 700, quality: 100, layout: CONSTRAINED)
+        }
+        stack {
+          items
+        }
+      }
+    }
+  }
+`
+
 
 export default IndexPage

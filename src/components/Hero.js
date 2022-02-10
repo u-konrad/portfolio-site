@@ -8,7 +8,7 @@ import ScrollIcon from "./ScrollIcon"
 
 const Hero = () => {
   return (
-    <Wrapper id="home" >
+    <Wrapper id="home">
       <Container className="p-0 d-flex flex-wrap align-items-center justify-content-center ">
         <div className="hero-info col-12 col-lg-7 ">
           <h6>Dzień dobry! Nazywam się...</h6>
@@ -26,7 +26,7 @@ const Hero = () => {
               Kontakt
             </Link>
           </div>
-          <ul className="social-row">
+          <ul className="social-row d-flex">
             {socialLinks.map(link => {
               return (
                 <OverlayTrigger
@@ -47,22 +47,22 @@ const Hero = () => {
         </div>
         <HeroPic className="hero-pic col-12 col-lg-5" />
       </Container>
-     <ScrollIcon/>
+      <ScrollIcon />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.section`
   position: relative;
-  min-height:100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 
- @media screen and (max-width: 992px) {
-      min-height:0;
-margin-top:50px
-     }
+  @media screen and (max-width: 992px) {
+    min-height: 0;
+    margin-top: 50px;
+  }
 
   h6 {
     font-weight: 400;
@@ -95,29 +95,14 @@ margin-top:50px
     }
   }
 
-
-
   @media screen and (max-width: 992px) {
     .hero-pic {
-      padding-top:20px ;
+      padding-top: 20px;
       max-height: 35vh;
       /* aspect-ratio:4/3; */
       object-fit: cover;
     }
   }
-
-
-
-  .social-row{
-    display: none;
-  }
-
-  @media screen and (max-width: 992px) {
-    .social-row{
-    display: flex;
-  }
-  }
-
 
 `
 

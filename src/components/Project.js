@@ -1,17 +1,28 @@
 import React from "react"
 import { FaGithub, FaLink } from "react-icons/fa"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Fragment } from "react"
 
-const Project = ({ description, title, github, stack, url, img }) => {
+const Project = ({ description, title, github, stack, url, images }) => {
+
+  const descriptionText = description => {
+    return (
+      <Fragment>
+        {JSON.parse(description.raw).content.map(p => (
+          <p >{p.content[0].value}</p>
+        ))}
+      </Fragment>
+    )
+  }
+
   return (
     <article className="project">
       <div className="project-img-frame">
-        <StaticImage
-          src="../images/jb-1.jpg"
+        <GatsbyImage
+          image={getImage(images[0])}
           alt={title}
           className="project-img"
-          layout="fullWidth"
         />
       </div>
       <div className="project-info">
@@ -19,9 +30,9 @@ const Project = ({ description, title, github, stack, url, img }) => {
           <h3>{title}</h3>
         </a>
 
-        <p className="project-desc">{description}</p>
+        <div className="project-desc my-3">{descriptionText(description)}</div>
         <div className="project-stack">
-          {stack.map(item => {
+          {stack.items.map(item => {
             return <span key={item}>{item}</span>
           })}
         </div>

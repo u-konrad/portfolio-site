@@ -10,8 +10,8 @@ import GatsbyIcon from "../assets/svg/icons8-gatsbyjs.svg"
 import MongoIcon from "../assets/svg/icons8-mongodb.svg"
 import BootstrapIcon from "../assets/svg/icons8-bootstrap.svg"
 import FigmaIcon from "../assets/svg/icons8-figma.svg"
-import PsIcon from "../assets/svg/icons8-adobe-photoshop.svg"
 import ReduxIcon from "../assets/svg/icons8-redux.svg"
+import GitIcon from "../assets/svg/icons8-git.svg"
 import Icon from "./Icon"
 
 const Stack = () => {
@@ -52,11 +52,12 @@ const Stack = () => {
           <Icon name="Bootstrap">
             <BootstrapIcon />
           </Icon>
+
+          <Icon name="Git">
+            <GitIcon />
+          </Icon>
           <Icon name="Figma">
             <FigmaIcon />
-          </Icon>
-          <Icon name="Adobe Photoshop">
-            <PsIcon />
           </Icon>
         </div>
       </Container>
