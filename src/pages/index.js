@@ -30,17 +30,16 @@ const IndexPage = ({data}) => {
 
 export const query = graphql`
   {
-    allContentfulProject {
+    allContentfulProject(sort: {fields: order}) {
       nodes {
         description {
           raw
         }
         github
-        id
         title
         url
         images {
-          gatsbyImageData(width: 800, quality: 100, layout: CONSTRAINED)
+          gatsbyImageData(layout: CONSTRAINED, quality: 100, width: 900)
         }
         stack {
           items

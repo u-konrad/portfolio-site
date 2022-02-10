@@ -5,9 +5,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Konrad Urbańczyk`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Web developer tworzący nowoczesne apklikacje internetowe.`,
     author: `Konrad Urbańczyk`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://www.konradurbanczyk.pl/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

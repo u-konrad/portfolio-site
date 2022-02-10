@@ -35,7 +35,7 @@ const Hero = () => {
                   overlay={<Tooltip id="button-tooltip">{link.name}</Tooltip>}
                 >
                   <li>
-                    <a href={link.url} className="social-link me-2">
+                    <a href={link.url} className="social-link me-2" target="_blank" rel="noopener noreferrer">
                       {link.icon}
                     </a>
                   </li>
