@@ -1,6 +1,5 @@
 import React from "react"
 import socialLinks from "../constants/social_links"
-import pageLinks from '../constants/links'
 
 const Footer = () => {
   return (
