@@ -10,13 +10,13 @@ const NavbarSecond = ({ toggleSidebar }) => {
 
   return (
     <nav className="navbar" >
-      <div className="nav-center container" >
+      <div className="padding-page w-100 d-flex justify-content-between align-items-center " >
           <Link className="logo-link" to={"/"}>
             <span className="logo">KU</span>
             <span className="logo logo-period">.</span>
           </Link>
 
-        <div id="nav-links">
+        <div>
         <ul className="nav nav-links">
           {pageLinks.map(link => {
             return (

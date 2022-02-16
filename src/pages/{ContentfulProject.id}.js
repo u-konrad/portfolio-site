@@ -8,7 +8,7 @@ const ProjectPage = ({ data }) => {
   console.log(data)
   const { title } = data.contentfulProject
   return (
-    <Layout>
+    <Layout type="other">
       <Seo title="Portfolio" />
       <div className="vh-100 d-grid align-items-center">{title}</div>
     </Layout>

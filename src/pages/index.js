@@ -8,7 +8,7 @@ import Contact from "../components/Contact"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
   const {
     allContentfulProject: { nodes: projects },
   } = data
@@ -26,11 +26,9 @@ const IndexPage = ({data}) => {
   )
 }
 
-
-
 export const query = graphql`
   {
-    allContentfulProject(sort: {fields: order}) {
+    allContentfulProject(sort: { fields: order }) {
       nodes {
         description {
           raw
@@ -49,6 +47,5 @@ export const query = graphql`
     }
   }
 `
-
 
 export default IndexPage

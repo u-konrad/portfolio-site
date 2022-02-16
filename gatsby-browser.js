@@ -2,11 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./src/assets/css/global.css"
 import bootstrap from "bootstrap/dist/js/bootstrap"
 
-export const onRouteUpdate = () => {
-  if (!document.getElementById("navbar")) return
+let scrollSpy
 
+export const onRouteUpdate = function () {
   document.addEventListener("scroll", function (e) {
-    const navbar = document.getElementById("navbar")
+    const navbar = document.querySelector(".navbar")
     const fab = document.getElementById("fab")
     // const sb = document.getElementById("social-buttons")
 
@@ -31,9 +31,17 @@ export const onRouteUpdate = () => {
     }
   })
 
-  if (document.querySelector("#nav-links")) {
-    new bootstrap.ScrollSpy(document.body, {
-      target: "#nav-links",
-    })
+  if (!document.getElementById("nav-links")) {
+    return
+  }
+
+  scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: "#nav-links",
+  })
+}
+
+export const onPreRouteUpdate = () => {
+  if (scrollSpy) {
+    scrollSpy.dispose()
   }
 }
