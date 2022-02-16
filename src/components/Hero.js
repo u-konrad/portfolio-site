@@ -15,7 +15,8 @@ const Hero = () => {
           <h2 className="my-2">Konrad Urbańczyk</h2>
           <h1>Web developer</h1>
           <p className="mt-4 mb-3 ">
-          Buduję atrakcyjne i funkcjonalne aplikacje internetowe przy użyciu najnowszych dostępnych technologii.
+            Buduję atrakcyjne i funkcjonalne aplikacje internetowe przy użyciu
+            najnowszych dostępnych technologii.
           </p>
           <div className="btn-bar mb-2">
             <Link className="m-btn m-btn-theme me-2" to="#portfolio">
@@ -35,7 +36,12 @@ const Hero = () => {
                   overlay={<Tooltip id="button-tooltip">{link.name}</Tooltip>}
                 >
                   <li>
-                    <a href={link.url} className="social-link me-2" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={link.url}
+                      className="social-link me-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {link.icon}
                     </a>
                   </li>
@@ -69,30 +75,12 @@ const Wrapper = styled.section`
     font-size: 18px;
   }
 
-  h2 {
-    font-weight: 300;
-    font-size: 72px;
-    line-height: 1;
-  }
 
-  h1 {
-    font-weight: bold;
-    font-size: 90px;
-    line-height: 1;
-  }
 
   p {
     max-width: 400px;
   }
 
-  @media screen and (max-width: 1400px) {
-    h2 {
-      font-size: max(5vw, 34px);
-    }
-    h1 {
-      font-size: max(6vw, 40px);
-    }
-  }
 
   @media screen and (max-width: 992px) {
     .hero-pic {
@@ -102,7 +90,6 @@ const Wrapper = styled.section`
       object-fit: cover;
     }
   }
-
 `
 
 export default Hero

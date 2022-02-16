@@ -1,16 +1,81 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Fragment } from "react"
 
 const ProjectPage = ({ data }) => {
   console.log(data)
-  const { title } = data.contentfulProject
+  const { title, images, description, url, github, stack } =
+    data.contentfulProject
+
+  const descriptionText = description => {
+    return (
+      <Fragment>
+        {JSON.parse(description.raw).content.map((p, index) => (
+          <p className="mb-2" key={index}>
+            {p.content[0].value}
+          </p>
+        ))}
+      </Fragment>
+    )
+  }
+
   return (
     <Layout type="other">
       <Seo title="Portfolio" />
-      <div className="vh-100 d-grid align-items-center">{title}</div>
+      <Wrapper className="bg-alternate">
+        <div className="outer-container bg-alternate">
+          <div className="full-width title-box text-center">
+            <h1 className="">{title}</h1>
+            <p className="my-5">{descriptionText(description)}</p>
+            <div className="d-flex ">
+              <a href={url} className="m-btn m-btn-theme me-3">
+                Strona
+              </a>
+              <a href={github} className="m-btn m-btn-t-theme">
+                Github
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="outer-container pb-5">
+          <div className="full-width d-flex justify-content-center ">
+            <GatsbyImage
+              image={getImage(images[0])}
+              alt={title}
+              className="img shadow"
+            />
+          </div>
+        </div>
+        <div className="outer-container py-5">
+          <div className="full-width d-flex flex-column mx-auto justify-content-center desc-box ">
+            <h3 className="mb-4">Opis projektu</h3>
+            <p className="mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Laoreet sit amet cursus sit amet dictum. Dui sapien eget mi proin
+              sed. Sit amet massa vitae tortor condimentum lacinia quis vel. Nam
+              aliquam sem et tortor consequat id porta. At lectus urna duis
+              convallis. Semper risus in hendrerit gravida rutrum quisque non
+              tellus orci. Eget duis at tellus at urna condimentum mattis
+              pellentesque. Sit amet cursus sit amet. Facilisis leo vel
+              fringilla est ullamcorper. Sit amet porttitor eget dolor. Lectus
+              urna duis convallis convallis tellus id interdum velit. Sed tempus
+              urna et pharetra pharetra massa massa. Sit amet venenatis urna
+              cursus. Tortor
+            </p>
+            <h3 className="mb-4">Technologie</h3>
+            <div className="stack-items">
+              {stack.items.map(item => {
+                return <span key={item}>{item}</span>
+              })}
+            </div>
+          </div>
+        </div>
+      </Wrapper>
     </Layout>
   )
 }
@@ -20,7 +85,10 @@ export const query = graphql`
     contentfulProject(id: { eq: $id }) {
       github
       images {
-        gatsbyImageData
+        gatsbyImageData(layout: CONSTRAINED, quality: 100, width: 900)
+      }
+      stack {
+        items
       }
       url
       title
@@ -32,89 +100,61 @@ export const query = graphql`
 `
 
 const Wrapper = styled.div`
-  --padding: 1rem;
-  --container-width: 1320px;
-  --container-width-xl: 1140px;
-  --container-width-lg: 960px;
-  --container-width-md: 720px;
-  --container-width-sm: 540px;
-  --nav-padding: 4rem;
+  min-height: 100vh;
+  padding-top: calc(82px + 10vh);
+padding-bottom: 5vh;
 
-  @media screen and (max-width: 1400px) {
-    --container-width: var(--container-width-xl);
-    --nav-padding: 3rem;
+  p {
+    line-height: 1.6;
   }
 
-  @media screen and (max-width: 1200px) {
-    --container-width: var(--container-width-lg);
-    --nav-padding: 2rem;
+  h3 {
+    font-weight: bold;
   }
 
-  @media screen and (max-width: 992px) {
-    --container-width: var(--container-width-md);
+  .title-box {
+    padding-bottom: 10vh;
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .nav {
-    height: 100px;
-    margin-bottom: 2rem;
-    border: 1px solid blue !important;
+  .title-box p {
+    max-width: 40ch;
+    font-size: clamp(16px, 1.3vw, 18px);
   }
 
-  .outer-container {
-    display: grid;
-    grid-template-columns: var(--padding) 1fr var(--padding);
-    width: 100vw;
+  .img {
+    /* position: relative;
+    top: -100px; */
+    max-width: 800px;
   }
 
-  .full-width,
-  .left,
-  .right,
-  .nav {
-    grid-column: 2/3;
-    border: 1px solid green;
+  .desc-box {
+    max-width: 700px;
+    line-height: 1.6;
   }
 
-  .full-bleed,
-  .bleed-left,
-  .bleed-right,
-  .full-bleed-sm {
-    grid-column: 1/4;
-    border: 1px solid red;
+  .stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: flex-start;
   }
 
-  //breakpoint to multiple-columns
-
-  @media screen and (min-width: 992px) {
-    .outer-container {
-      grid-template-columns: 1fr repeat(2, calc(var(--container-width) / 2)) 1fr;
-    }
-    .full-width {
-      grid-column: 2/4;
-    }
-    .left {
-      grid-column: 2/3;
-    }
-
-    .right {
-      grid-column: 3/4;
-    }
-
-    .full-bleed {
-      grid-column: 1/5;
-    }
-
-    .bleed-left {
-      grid-column: 1/3;
-    }
-
-    .bleed-right {
-      grid-column: 3/5;
-    }
-
-    .nav {
-      grid-column: 1/5;
-      padding-inline: var(--nav-padding);
-    }
+  .stack-items span {
+    display: inline-block;
+    color: black;
+    /* margin: 0.25rem; */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    letter-spacing: 2px;
+    font-size: 16px;
+    background-color: var(--clr-primary);
   }
 `
 
