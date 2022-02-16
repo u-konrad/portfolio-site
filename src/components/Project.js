@@ -3,8 +3,9 @@ import { FaGithub, FaLink } from "react-icons/fa"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Fragment } from "react"
+import { Link, navigate } from "gatsby"
 
-const Project = ({ description, title, github, stack, url, images }) => {
+const Project = ({ description, title, github, stack, url, images,id }) => {
 
   const descriptionText = description => {
     return (
@@ -17,18 +18,21 @@ const Project = ({ description, title, github, stack, url, images }) => {
   }
 
   return (
-    <article className="project">
+    <article className="project" >
       <div className="project-img-frame">
         <GatsbyImage
           image={getImage(images[0])}
           alt={title}
           className="project-img"
+          onClick={()=>{
+            navigate(`/${id}`)
+          }}
         />
       </div>
       <div className="project-info">
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <Link to={`/${id}`} target="_blank" rel="noopener noreferrer">
           <h3>{title}</h3>
-        </a>
+        </Link>
 
         <div className="project-desc my-3">{descriptionText(description)}</div>
         <div className="project-stack">

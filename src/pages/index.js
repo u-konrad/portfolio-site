@@ -44,6 +44,7 @@ export const query = graphql`
         stack {
           items
         }
+        id
       }
     }
   }

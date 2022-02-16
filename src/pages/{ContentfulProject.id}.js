@@ -1,38 +1,35 @@
 import React from "react"
 import styled from "styled-components"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import Seo from "../components/seo"
 
-const TestPage = () => {
+const ProjectPage = ({ data }) => {
+  console.log(data)
+  const { title } = data.contentfulProject
   return (
-    <Wrapper>
-      <div className="outer-container">
-        <div className="nav"><p>LOGO</p></div>
-      </div>
-      <div className="outer-container">
-        <div className=" full-width"></div>
-      </div>
-      <div className="outer-container">
-        <div className="full-bleed"></div>
-      </div>
-      <div className="outer-container">
-        <div className=" left"></div>
-        <div className=" right"></div>
-      </div>
-      <div className="outer-container">
-        <div className=" bleed-left"></div>
-        <div className=" bleed-right"></div>
-      </div>
-      <div className="outer-container">
-        <div className="left test">
-          <p>some text</p>
-        </div>
-        <div className=" bleed-right"></div>
-      </div>
-      <div className="outer-container">
-          <div className="full-bleed-sm left"></div>
-</div>
-    </Wrapper>
+    <Layout>
+      <Seo title="Portfolio" />
+      <div className="vh-100 d-grid align-items-center">{title}</div>
+    </Layout>
   )
 }
+
+export const query = graphql`
+  query GetProjectById($id: String) {
+    contentfulProject(id: { eq: $id }) {
+      github
+      images {
+        gatsbyImageData
+      }
+      url
+      title
+      description {
+        raw
+      }
+    }
+  }
+`
 
 const Wrapper = styled.div`
   --padding: 1rem;
@@ -63,16 +60,6 @@ const Wrapper = styled.div`
     border: 1px solid blue !important;
   }
 
-  & div > div {
-    height: 200px;
-    margin-bottom: 2rem;
-  }
-
-  .test {
-    display: grid;
-    place-items: center;
-  }
-
   .outer-container {
     display: grid;
     grid-template-columns: var(--padding) 1fr var(--padding);
@@ -94,8 +81,6 @@ const Wrapper = styled.div`
     grid-column: 1/4;
     border: 1px solid red;
   }
-
-
 
   //breakpoint to multiple-columns
 
@@ -133,4 +118,4 @@ const Wrapper = styled.div`
   }
 `
 
-export default TestPage
+export default ProjectPage
