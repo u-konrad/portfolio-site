@@ -6,8 +6,6 @@ A personal portfolio site built with Gatsby.js.
 
 Here is a link to the site: [https://www.konradurbanczyk.pl/](https://www.konradurbanczyk.pl/)
 
-![Home page](./src/assets/images/clothing-home.jpg)
-
 ## General description
 
 A simple portfolio site built using Gatsby.js, Contentful and Formspree.
