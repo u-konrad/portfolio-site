@@ -27,22 +27,25 @@ const IndexPage = ({ data }) => {
 }
 
 export const query = graphql`
-  {
-    allContentfulProject(sort: { fields: order }) {
+ {
+    allContentfulProject(sort: {fields: order}) {
       nodes {
         description {
           raw
         }
+        id
         github
-        title
-        url
-        images {
-          gatsbyImageData(layout: CONSTRAINED, quality: 100, width: 900)
+        shortDesc {
+          shortDesc
         }
         stack {
           items
         }
-        id
+        title
+        url
+        images {
+          gatsbyImageData(quality: 100, layout: CONSTRAINED, width: 900)
+        }
       }
     }
   }

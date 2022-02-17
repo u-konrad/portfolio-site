@@ -2,39 +2,29 @@ import React from "react"
 import { FaGithub, FaLink } from "react-icons/fa"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Fragment } from "react"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 
-const Project = ({ description, title, github, stack, url, images,id }) => {
-
-  const descriptionText = description => {
-    return (
-      <Fragment>
-        {JSON.parse(description.raw).content.map((p,index) => (
-          <p key={index}>{p.content[0].value}</p>
-        ))}
-      </Fragment>
-    )
-  }
+const Project = ({  title, github, stack, url, images, id, shortDesc }) => {
+ 
 
   return (
-    <article className="project" >
-      <div className="project-img-frame">
+    <article className="project">
+      <Link
+        className="project-img-frame"
+        to={`/${id}`}
+      >
         <GatsbyImage
           image={getImage(images[0])}
           alt={title}
           className="project-img"
-          onClick={()=>{
-            navigate(`/${id}`)
-          }}
         />
-      </div>
+      </Link>
       <div className="project-info">
         <Link to={`/${id}`} target="_blank" rel="noopener noreferrer">
           <h3>{title}</h3>
         </Link>
 
-        <div className="project-desc my-3">{descriptionText(description)}</div>
+        <p className="project-desc my-3">{shortDesc?.shortDesc}</p>
         <div className="project-stack">
           {stack.items.map(item => {
             return <span key={item}>{item}</span>

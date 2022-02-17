@@ -5,11 +5,14 @@ import Layout from "../components/Layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Fragment } from "react"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const ProjectPage = ({ data }) => {
   console.log(data)
-  const { title, images, description, url, github, stack } =
+  const { title, images, description, url, github, stack, shortDesc } =
     data.contentfulProject
+
+  const desc = documentToReactComponents(JSON.parse(description.raw))
 
   const descriptionText = description => {
     return (
@@ -30,7 +33,7 @@ const ProjectPage = ({ data }) => {
         <div className="outer-container bg-alternate">
           <div className="full-width title-box text-center">
             <h1 className="">{title}</h1>
-            <p className="my-5">{descriptionText(description)}</p>
+            <p className="my-5">{shortDesc.shortDesc}</p>
             <div className="d-flex ">
               <a href={url} className="m-btn m-btn-theme me-3">
                 Strona
@@ -53,20 +56,7 @@ const ProjectPage = ({ data }) => {
         <div className="outer-container py-5">
           <div className="full-width d-flex flex-column mx-auto justify-content-center desc-box ">
             <h3 className="mb-4">Opis projektu</h3>
-            <p className="mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Laoreet sit amet cursus sit amet dictum. Dui sapien eget mi proin
-              sed. Sit amet massa vitae tortor condimentum lacinia quis vel. Nam
-              aliquam sem et tortor consequat id porta. At lectus urna duis
-              convallis. Semper risus in hendrerit gravida rutrum quisque non
-              tellus orci. Eget duis at tellus at urna condimentum mattis
-              pellentesque. Sit amet cursus sit amet. Facilisis leo vel
-              fringilla est ullamcorper. Sit amet porttitor eget dolor. Lectus
-              urna duis convallis convallis tellus id interdum velit. Sed tempus
-              urna et pharetra pharetra massa massa. Sit amet venenatis urna
-              cursus. Tortor
-            </p>
+            <div className="mb-5 description">{desc}</div>
             <h3 className="mb-4">Technologie</h3>
             <div className="stack-items">
               {stack.items.map(item => {
@@ -85,15 +75,18 @@ export const query = graphql`
     contentfulProject(id: { eq: $id }) {
       github
       images {
-        gatsbyImageData(layout: CONSTRAINED, quality: 100, width: 900)
+        gatsbyImageData
       }
-      stack {
-        items
+      description {
+        raw
+      }
+      shortDesc {
+        shortDesc
       }
       url
       title
-      description {
-        raw
+      stack {
+        items
       }
     }
   }
@@ -102,7 +95,7 @@ export const query = graphql`
 const Wrapper = styled.div`
   min-height: 100vh;
   padding-top: calc(82px + 10vh);
-padding-bottom: 5vh;
+  padding-bottom: 5vh;
 
   p {
     line-height: 1.6;
@@ -124,7 +117,7 @@ padding-bottom: 5vh;
   }
 
   .title-box p {
-    max-width: 40ch;
+    max-width: 50ch;
     font-size: clamp(16px, 1.3vw, 18px);
   }
 
@@ -148,13 +141,26 @@ padding-bottom: 5vh;
 
   .stack-items span {
     display: inline-block;
-    color: black;
+    color: white;
     /* margin: 0.25rem; */
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     letter-spacing: 2px;
     font-size: 16px;
     background-color: var(--clr-primary);
+  }
+
+  .description ul {
+    list-style: disc;
+    margin-left: 2rem;
+  }
+
+  .description p {
+margin-bottom: 1rem;
+  }
+
+  .description li p {
+margin-bottom: 0.5rem;
   }
 `
 
