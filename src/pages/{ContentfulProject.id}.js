@@ -1,30 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Fragment } from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const ProjectPage = ({ data }) => {
-  console.log(data)
   const { title, images, description, url, github, stack, shortDesc } =
     data.contentfulProject
 
   const desc = documentToReactComponents(JSON.parse(description.raw))
-
-  const descriptionText = description => {
-    return (
-      <Fragment>
-        {JSON.parse(description.raw).content.map((p, index) => (
-          <p className="mb-2" key={index}>
-            {p.content[0].value}
-          </p>
-        ))}
-      </Fragment>
-    )
-  }
 
   return (
     <Layout type="other">
@@ -35,10 +21,20 @@ const ProjectPage = ({ data }) => {
             <h1 className="">{title}</h1>
             <p className="my-5">{shortDesc.shortDesc}</p>
             <div className="d-flex ">
-              <a href={url} className="m-btn m-btn-theme me-3">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="m-btn m-btn-theme me-3"
+              >
                 Strona
               </a>
-              <a href={github} className="m-btn m-btn-t-theme">
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="m-btn m-btn-t-theme"
+              >
                 Github
               </a>
             </div>
@@ -156,11 +152,11 @@ const Wrapper = styled.div`
   }
 
   .description p {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   .description li p {
-margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 `
 
