@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Konrad Urbańczyk`,
-    description: `Web developer tworzący nowoczesne apklikacje internetowe.`,
+    description: `Web developer tworzący nowoczesne aplikacje internetowe.`,
     author: `Konrad Urbańczyk`,
     siteUrl: `https://www.konradurbanczyk.pl/`,
   },
@@ -21,6 +21,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
